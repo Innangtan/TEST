@@ -1,0 +1,42 @@
+  public string getstring2int()
+        {
+            //ขอบคุณที่ให้โอกาศค่ะ จากโจทย์ที่ให้มา ส่วนตัวหาได้ 3 วิธี
+            var input = "a5b7c3";
+            string string2int = "";
+            for (int i = 0; i < input.Length; i++)
+            {
+                //1).เลือกวิธีที่ 1 เพราะว่าสามารถนำไปใช้งานต่อได้ง่ายกว่าวิธีอื่น เช่น ต้องการผลรวมของตัวเลขที่ตึงค่ามาได้
+                string new_s = "" + input[i];//ดึงค่าตัวอักษรในประโยค
+                for (int number = 0; number <= 9; number++)
+                {
+                    string str_number = "" + number;//ค่าตัวเลข
+                    if (str_number == new_s)
+                    {
+                        string2int += new_s;
+                    }
+                }
+
+                //2).
+                //switch (new_s)
+                //{
+                //    case "0": string2int += new_s ;break;
+                //    case "1": string2int += new_s ;break;
+                //    case "2": string2int += new_s ;break;
+                //    case "3": string2int += new_s ;break;
+                //    case "4": string2int += new_s ;break;
+                //    case "5": string2int += new_s ;break;
+                //    case "6": string2int += new_s ;break;
+                //    case "7": string2int += new_s ;break;
+                //    case "8": string2int += new_s; break;
+                //    case "9": string2int += new_s; break;
+                //}
+
+                //-).
+                //if (input[i] >= '0' && input[i] <= '9')
+                //{
+                //    string2int += "" + input[i];
+                //}
+            }
+
+            return string2int;
+        }
