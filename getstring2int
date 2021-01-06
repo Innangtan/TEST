@@ -1,6 +1,6 @@
   public string getstring2int()
         {
-            //ขอบคุณที่ให้โอกาศค่ะ จากโจทย์ที่ให้มา ส่วนตัวหาได้ 3 วิธี
+            //ขอบคุณที่ให้โอกาสค่ะ จากโจทย์ที่ให้มา ส่วนตัวหาได้ 3 วิธี
             var input = "a5b7c3";
             string string2int = "";
             for (int i = 0; i < input.Length; i++)
@@ -31,7 +31,7 @@
                 //    case "9": string2int += new_s; break;
                 //}
 
-                //-).
+                //3).
                 //if (input[i] >= '0' && input[i] <= '9')
                 //{
                 //    string2int += "" + input[i];
