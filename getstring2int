@@ -1,42 +1,50 @@
-  public string getstring2int()
+public static int getstring2int()
         {
-            //ขอบคุณที่ให้โอกาสค่ะ จากโจทย์ที่ให้มา ส่วนตัวหาได้ 3 วิธี
+            //__/\__ "
             var input = "a5b7c3";
             string string2int = "";
+            int result = 0;
             for (int i = 0; i < input.Length; i++)
             {
-                //1).เลือกวิธีที่ 1 เพราะว่าสามารถนำไปใช้งานต่อได้ง่ายกว่าวิธีอื่น เช่น ต้องการผลรวมของตัวเลขที่ตึงค่ามาได้
-                string new_s = "" + input[i];//ดึงค่าตัวอักษรในประโยค
+
+                string new_s = "" + input[i];
+                switch (new_s)
+                {
+                    case "0": string2int += new_s; break;
+                    case "1": string2int += new_s; break;
+                    case "2": string2int += new_s; break;
+                    case "3": string2int += new_s; break;
+                    case "4": string2int += new_s; break;
+                    case "5": string2int += new_s; break;
+                    case "6": string2int += new_s; break;
+                    case "7": string2int += new_s; break;
+                    case "8": string2int += new_s; break;
+                    case "9": string2int += new_s; break;
+                }
+            }
+            var point = 0;
+            var power = 1;
+            for (var i = string2int.Length; i > 0; i--)
+            {
+                string new_s = "" + string2int[i-1];
                 for (int number = 0; number <= 9; number++)
                 {
-                    string str_number = "" + number;//ค่าตัวเลข
+                    string str_number = "" + number;
                     if (str_number == new_s)
                     {
-                        string2int += new_s;
+                        if (point > 0)
+                        {
+                            power = power * 10;
+                            result = result + number * (power);
+                        }
+                        else
+                        {
+                            result = result + number;
+                        }
+                        continue;
                     }
                 }
-
-                //2).
-                //switch (new_s)
-                //{
-                //    case "0": string2int += new_s ;break;
-                //    case "1": string2int += new_s ;break;
-                //    case "2": string2int += new_s ;break;
-                //    case "3": string2int += new_s ;break;
-                //    case "4": string2int += new_s ;break;
-                //    case "5": string2int += new_s ;break;
-                //    case "6": string2int += new_s ;break;
-                //    case "7": string2int += new_s ;break;
-                //    case "8": string2int += new_s; break;
-                //    case "9": string2int += new_s; break;
-                //}
-
-                //3).
-                //if (input[i] >= '0' && input[i] <= '9')
-                //{
-                //    string2int += "" + input[i];
-                //}
+                point += 1;
             }
-
-            return string2int;
+            return result;
         }
